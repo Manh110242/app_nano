@@ -23,7 +23,7 @@ class _BanLaState extends State<BanLa> {
             "Bạn là...",
             style: TextStyle(
                 color: colorMain,
-                fontSize: 40,
+                fontSize: 30,
                 fontWeight: FontWeight.w700),
           ),
           InkWell(
@@ -32,18 +32,18 @@ class _BanLaState extends State<BanLa> {
                   MaterialPageRoute(builder: (context) => ScreenBacSi()));
             },
             child: Container(
-              height: 70,
+              height: 50,
               margin: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
               decoration: BoxDecoration(
                   color: col,
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Color.fromRGBO(23,112,219,1), width: 1)),
+              ),
               child: Center(
                   child: Text(
                 "Bác sĩ",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 30,
+                  fontSize: 22,
                   fontWeight: FontWeight.w700,
                 ),
               )),
@@ -55,19 +55,17 @@ class _BanLaState extends State<BanLa> {
                   MaterialPageRoute(builder: (context) => ScreenBenhNhan()));
             },
             child: Container(
-              height: 70,
+              height: 50,
               margin: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               decoration: BoxDecoration(
                   color: col,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Color(0xff333399), width: 1)),
+                  borderRadius: BorderRadius.circular(20),),
               child: Center(
                   child: Text(
                 "Bênh nhân",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 30,
+                  fontSize: 22,
                   fontWeight: FontWeight.w700,
                 ),
               )),

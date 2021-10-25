@@ -47,28 +47,19 @@ class _LichSuUongThuocState extends State<LichSuUongThuoc> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: colorMain,
         title: Text(
           "Lịch sữ uống thuốc",
-          style: TextStyle(color: Colors.black,),
-        ),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
         ),
         actions: [
           TextButton(
             onPressed: () async {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>CreateLichSu()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CreateLichSu()));
             },
             child: Text(
               "Thêm mới",
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.white),
             ),
           ),
         ],
@@ -143,12 +134,13 @@ class _LichSuUongThuocState extends State<LichSuUongThuoc> {
                     children: List.generate(
                       data.lan[index].images.length,
                       (index) => InkWell(
-                        onTap: (){
+                        onTap: () {
                           showMaterialModalBottomSheet(
                             context: context,
                             builder: (context) => ShowImage(
-                              list:  data.lan[index].images,
-                              selete: index, Image: '',
+                              list: data.lan[index].images,
+                              selete: index,
+                              Image: '',
                             ),
                           );
                         },

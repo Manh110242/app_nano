@@ -14,33 +14,39 @@ class _ScreenSanglocBenhState extends State<ScreenSanglocBenh> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: colorMain,
+        title: Text('Triệu chứng'),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                Container(
-                  height: 60,
-                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                  decoration: BoxDecoration(
-                    color: colorMain,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Triệu chứng",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
+                // Container(
+                //   height: 60,
+                //   margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                //   decoration: BoxDecoration(
+                //     color: colorMain,
+                //     borderRadius: BorderRadius.circular(20),
+                //   ),
+                //   child: Center(
+                //     child: Text(
+                //       "Triệu chứng",
+                //       style: TextStyle(
+                //           color: Colors.white,
+                //           fontSize: 18,
+                //           fontWeight: FontWeight.bold),
+                //     ),
+                //   ),
+                // ),
                 SizedBox(
                   height: 10,
                 ),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                       child: Text(
@@ -76,6 +82,11 @@ class _ScreenSanglocBenhState extends State<ScreenSanglocBenh> {
                                   BorderSide(color: colorMain, width: 1),
                               borderRadius: BorderRadius.circular(10),
                             ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: colorMain, width: 1),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                             contentPadding: EdgeInsets.symmetric(
                                 horizontal: 15, vertical: 15)),
                       ),
@@ -84,6 +95,7 @@ class _ScreenSanglocBenhState extends State<ScreenSanglocBenh> {
                 ),
                 SizedBox(height: 20),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                       child: Text(
@@ -112,12 +124,17 @@ class _ScreenSanglocBenhState extends State<ScreenSanglocBenh> {
                                 TextStyle(color: Colors.grey, fontSize: 14),
                             border: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.blue, width: 1),
+                                  BorderSide(color: colorMain, width: 1),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.blue, width: 1),
+                                  BorderSide(color: colorMain, width: 1),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: colorMain, width: 1),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             contentPadding: EdgeInsets.symmetric(
@@ -128,6 +145,7 @@ class _ScreenSanglocBenhState extends State<ScreenSanglocBenh> {
                 ),
                 SizedBox(height: 20),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                       child: Text(
@@ -155,12 +173,17 @@ class _ScreenSanglocBenhState extends State<ScreenSanglocBenh> {
                                 TextStyle(color: Colors.grey, fontSize: 14),
                             border: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.blue, width: 1),
+                                  BorderSide(color: colorMain, width: 1),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.blue, width: 1),
+                                  BorderSide(color: colorMain, width: 1),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: colorMain, width: 1),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             contentPadding: EdgeInsets.symmetric(
@@ -169,19 +192,21 @@ class _ScreenSanglocBenhState extends State<ScreenSanglocBenh> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         Navigator.pop(context);
                       },
                       child: Container(
                         padding:
                             EdgeInsets.symmetric(horizontal: 15, vertical: 7),
                         decoration: BoxDecoration(
-                            color: colorMain.withOpacity(0.5),
+                            color: colorMain,
                             borderRadius: BorderRadius.circular(10)),
                         child: Text(
                           "Quay lại",
@@ -193,14 +218,17 @@ class _ScreenSanglocBenhState extends State<ScreenSanglocBenh> {
                       ),
                     ),
                     InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenBenhDiChuyen()));
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ScreenBenhDiChuyen()));
                       },
                       child: Container(
                         padding:
-                        EdgeInsets.symmetric(horizontal: 15, vertical: 7),
+                            EdgeInsets.symmetric(horizontal: 15, vertical: 7),
                         decoration: BoxDecoration(
-                            color: colorMain.withOpacity(0.5),
+                            color: colorMain,
                             borderRadius: BorderRadius.circular(10)),
                         child: Text(
                           "Tiếp",

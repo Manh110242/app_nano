@@ -17,30 +17,35 @@ class _CreateHSBenhState extends State<CreateHSBenh> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+         centerTitle: true,
+        backgroundColor: colorMain,
+        title: Text('Tạo hồ sơ bệnh nhân'),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: 60,
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                decoration: BoxDecoration(
-                  color: colorMain,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Text(
-                    "Tạo hồ sơ bệnh nhân",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
+              // Container(
+              //   height: 60,
+              //   margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+              //   decoration: BoxDecoration(
+              //     color: colorMain,
+              //     borderRadius: BorderRadius.circular(20),
+              //   ),
+              //   child: Center(
+              //     child: Text(
+              //       "Tạo hồ sơ bệnh nhân",
+              //       style: TextStyle(
+              //           color: Colors.white,
+              //           fontSize: 17,
+              //           fontWeight: FontWeight.bold),
+              //     ),
+              //   ),
+              // ),
               SizedBox(
-                height: 80,
+                height: 15,
               ),
               ItemInput(
                   hint: "Nhập họ tên", title: "Họ và tên", controller: name),
@@ -119,11 +124,15 @@ class _CreateHSBenhState extends State<CreateHSBenh> {
                   hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: colorMain, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: colorMain, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   contentPadding: EdgeInsets.symmetric(horizontal: 15)),
             ),

@@ -32,6 +32,11 @@ class _ScreenDatKhamState extends State<ScreenDatKham> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: colorMain,
+        title: Text('Đặt khám'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: SafeArea(
@@ -41,26 +46,26 @@ class _ScreenDatKhamState extends State<ScreenDatKham> {
                 SizedBox(
                   height: 15,
                 ),
-                Container(
-                  height: 50,
-                  margin: EdgeInsets.symmetric(horizontal: 30),
-                  decoration: BoxDecoration(
-                    color: colorMain,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Đặt khám",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
+                // Container(
+                //   height: 50,
+                //   margin: EdgeInsets.symmetric(horizontal: 30),
+                //   decoration: BoxDecoration(
+                //     color: colorMain,
+                //     borderRadius: BorderRadius.circular(20),
+                //   ),
+                //   child: Center(
+                //     child: Text(
+                //       "Đặt khám",
+                //       style: TextStyle(
+                //           color: Colors.white,
+                //           fontSize: 20,
+                //           fontWeight: FontWeight.bold),
+                //     ),
+                //   ),
+                // ),
+                // SizedBox(
+                //   height: 15,
+                // ),
                 Text(
                   "Hồ sơ của bạn",
                   style: TextStyle(
@@ -196,7 +201,7 @@ class _ScreenDatKhamState extends State<ScreenDatKham> {
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: colorMain.withOpacity(0.6)),
+                        color: colorMain),
                     child: Text(
                       "Hoàn tất",
                       style: TextStyle(

@@ -15,6 +15,7 @@ class ScreenHomePage extends StatefulWidget {
 class _ScreenHomePageState extends State<ScreenHomePage> {
   int page = 0;
   late PageController _controller;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -22,11 +23,12 @@ class _ScreenHomePageState extends State<ScreenHomePage> {
     _controller = new PageController(
         initialPage: page, keepPage: true, viewportFraction: 1.0);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child:  PageView(
+        child: PageView(
           physics: NeverScrollableScrollPhysics(),
           controller: _controller,
           children: [
@@ -60,13 +62,13 @@ class _ScreenHomePageState extends State<ScreenHomePage> {
                 top: 2,
                 right: MediaQuery.of(context).size.width * 0.33,
                 child: InkWell(
-                  onTap: (){
+                  onTap: () {
                     _controller.animateToPage(
                       page,
                       duration: Duration(milliseconds: 1),
                       curve: Curves.ease,
                     );
-                    page = 2 ;
+                    page = 2;
                     setState(() {});
                   },
                   child: Container(
@@ -93,8 +95,8 @@ class _ScreenHomePageState extends State<ScreenHomePage> {
   Widget ItemBottom(IconData iconData, index) {
     return Expanded(
       child: InkWell(
-        onTap: (){
-          page = index ;
+        onTap: () {
+          page = index;
           _controller.animateToPage(
             page,
             duration: Duration(milliseconds: 1),

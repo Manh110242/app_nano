@@ -18,6 +18,11 @@ class _TaoLoTrinhState extends State<TaoLoTrinh> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: colorMain,
+        title: Text('Tạo lộ trình điều trị'),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -25,22 +30,23 @@ class _TaoLoTrinhState extends State<TaoLoTrinh> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  height: 50,
-                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                  decoration: BoxDecoration(
-                    color: colorMain,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Center(
-                      child: Text(
-                    "Tạo lộ trình điều trị",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold),
-                  )),
-                ),
+                // Container(
+                //   height: 50,
+                //   margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                //   decoration: BoxDecoration(
+                //     color: colorMain,
+                //     borderRadius: BorderRadius.circular(20),
+                //   ),
+                //   child: Center(
+                //       child: Text(
+                //     "Tạo lộ trình điều trị",
+                //     style: TextStyle(
+                //         color: Colors.white,
+                //         fontSize: 17,
+                //         fontWeight: FontWeight.bold),
+                //   )),
+                // ),
+                SizedBox(height: 15,),
                 ItemInput(
                     hint: "Nhập họ và tên",
                     title: "Họ và tên",
@@ -159,7 +165,7 @@ class _TaoLoTrinhState extends State<TaoLoTrinh> {
                         padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: colorMain.withOpacity(0.6)),
+                            color: colorMain),
                         child: Text(
                           "Lưu",
                           style: TextStyle(
@@ -210,12 +216,16 @@ class _TaoLoTrinhState extends State<TaoLoTrinh> {
                   hintText: hint,
                   hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   contentPadding: EdgeInsets.symmetric(horizontal: 15)),
             ),
@@ -253,13 +263,17 @@ class _TaoLoTrinhState extends State<TaoLoTrinh> {
                 hintText: hint,
                 hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blue, width: 1),
+                  borderSide: BorderSide(color: colorMain, width: 1),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blue, width: 1),
+                  borderSide: BorderSide(color: colorMain, width: 1),
                   borderRadius: BorderRadius.circular(20),
                 ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: colorMain, width: 1),
+                borderRadius: BorderRadius.circular(20),
+              ),
             ),
           ),
         ],

@@ -16,27 +16,33 @@ class _DatLichState extends State<DatLich> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: colorMain,
+        title: Text('Danh sách phòng khám'),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children: [
-              Container(
-                height: 50,
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                decoration: BoxDecoration(
-                  color: colorMain,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Text(
-                    "Danh sách phòng khám",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
+             children: [
+            //   Container(
+            //     height: 50,
+            //     margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+            //     decoration: BoxDecoration(
+            //       color: colorMain,
+            //       borderRadius: BorderRadius.circular(20),
+            //     ),
+            //     child: Center(
+            //       child: Text(
+            //         "Danh sách phòng khám",
+            //         style: TextStyle(
+            //             color: Colors.white,
+            //             fontSize: 20,
+            //             fontWeight: FontWeight.bold),
+            //       ),
+            //     ),
+            //   ),
+               SizedBox(height: 15,),
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Row(
@@ -113,7 +119,10 @@ class _DatLichState extends State<DatLich> {
                       child: Container(
                         padding:
                             EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                        color: Color(0xff4aa3a3),
+                        decoration: BoxDecoration(
+                          color: colorMain,
+                          borderRadius: BorderRadius.circular(5)
+                        ),
                         child: Text(
                           "Đặt lịch",
                           style: TextStyle(color: Colors.white),
@@ -138,7 +147,7 @@ class _DatLichState extends State<DatLich> {
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: colorMain.withOpacity(0.6)),
+                      color: colorMain),
                   child: Text(
                     "Hủy",
                     style: TextStyle(color: Colors.white, fontSize: 17),

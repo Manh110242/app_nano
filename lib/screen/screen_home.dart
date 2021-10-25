@@ -23,26 +23,25 @@ class _HomePageState extends State<HomePage> {
           Text(
             "Bạn là...",
             style: TextStyle(
-                color: colorMain, fontSize: 40, fontWeight: FontWeight.w700),
+                color: colorMain, fontSize: 30, fontWeight: FontWeight.w700),
           ),
           InkWell(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenHomePage()));
             },
             child: Container(
-              height: 70,
+              height: 50,
               margin: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
               decoration: BoxDecoration(
                 color: colorMain,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Color.fromRGBO(69,122,177,1), width: 1)
               ),
               child: Center(
                   child: Text(
                 "Bác sĩ",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 30,
+                  fontSize: 22,
                   fontWeight: FontWeight.w700,
                 ),
               )),
@@ -53,20 +52,18 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenBenhNhan()));
             },
             child: Container(
-              height: 70,
+              height:50,
               margin: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
-              padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
               decoration: BoxDecoration(
                 color: colorMain,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Color.fromRGBO(69,122,177,1), width: 1)
               ),
               child: Center(
                   child: Text(
                 "Bênh nhân",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 30,
+                  fontSize: 22,
                   fontWeight: FontWeight.w700,
                 ),
               )),

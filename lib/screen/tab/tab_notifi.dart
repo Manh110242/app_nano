@@ -12,15 +12,13 @@ class _TabNotifiState extends State<TabNotifi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
         title: Text(
           "Thông báo",
-          style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
         leading: Container(),
         leadingWidth: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: colorMain,
       ),
       body: SafeArea(
         child: ListView(

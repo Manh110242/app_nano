@@ -136,6 +136,10 @@ class _ScreenSignInState extends State<ScreenSignIn> {
                     borderSide: BorderSide(color: colorMain, width: 1),
                     borderRadius: BorderRadius.circular(15),
                   ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
                   contentPadding: EdgeInsets.symmetric(horizontal: 15)),
             ),
           ),

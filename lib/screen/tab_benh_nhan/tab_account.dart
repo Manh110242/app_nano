@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../color_main.dart';
@@ -12,6 +13,13 @@ class _TabAccountBNState extends State<TabAccountBN> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: Container(),
+        leadingWidth: 0,
+        centerTitle: true,
+        title: Text("Tài khoản"),
+        backgroundColor: colorMain,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -55,9 +63,9 @@ class _TabAccountBNState extends State<TabAccountBN> {
                       ),
                       child: Center(
                         child: Icon(
-                          Icons.add,
+                          CupertinoIcons.person,
                           size: 70,
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                       ),
                     )

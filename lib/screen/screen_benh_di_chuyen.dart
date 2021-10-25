@@ -20,28 +20,34 @@ class _ScreenBenhDiChuyenState extends State<ScreenBenhDiChuyen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: colorMain,
+        title: Text('Bện di truyền'),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: 60,
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                decoration: BoxDecoration(
-                  color: colorMain,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Text(
-                    "Bện di truyền",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
+              // Container(
+              //   height: 60,
+              //   margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+              //   decoration: BoxDecoration(
+              //     color: colorMain,
+              //     borderRadius: BorderRadius.circular(20),
+              //   ),
+              //   child: Center(
+              //     child: Text(
+              //       "Bện di truyền",
+              //       style: TextStyle(
+              //           color: Colors.white,
+              //           fontSize: 17,
+              //           fontWeight: FontWeight.bold),
+              //     ),
+              //   ),
+              // ),
+              SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Row(
@@ -97,7 +103,7 @@ class _ScreenBenhDiChuyenState extends State<ScreenBenhDiChuyen> {
                         padding:
                             EdgeInsets.symmetric(horizontal: 15, vertical: 7),
                         decoration: BoxDecoration(
-                            color: colorMain.withOpacity(0.5),
+                            color: colorMain,
                             borderRadius: BorderRadius.circular(10)),
                         child: Text(
                           "Quay lại",
@@ -119,7 +125,7 @@ class _ScreenBenhDiChuyenState extends State<ScreenBenhDiChuyen> {
                         padding:
                             EdgeInsets.symmetric(horizontal: 15, vertical: 7),
                         decoration: BoxDecoration(
-                            color: colorMain.withOpacity(0.5),
+                            color: colorMain,
                             borderRadius: BorderRadius.circular(10)),
                         child: Text(
                           "Tiếp",
@@ -171,11 +177,15 @@ class _ScreenBenhDiChuyenState extends State<ScreenBenhDiChuyen> {
                   hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: colorMain, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: colorMain, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   contentPadding: EdgeInsets.symmetric(horizontal: 15)),
             ),

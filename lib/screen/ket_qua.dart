@@ -16,6 +16,11 @@ class _KetQuaState extends State<KetQua> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: colorMain,
+        title: Text('Kết quả'),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -23,24 +28,26 @@ class _KetQuaState extends State<KetQua> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  height: 50,
-                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                  decoration: BoxDecoration(
-                    color: colorMain,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Kết quả",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
+                // Container(
+                //   height: 50,
+                //   margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                //   decoration: BoxDecoration(
+                //     color: colorMain,
+                //     borderRadius: BorderRadius.circular(20),
+                //   ),
+                //   child: Center(
+                //     child: Text(
+                //       "Kết quả",
+                //       style: TextStyle(
+                //           color: Colors.white,
+                //           fontSize: 20,
+                //           fontWeight: FontWeight.bold),
+                //     ),
+                //   ),
+                // ),
+                SizedBox(height: 15,),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                       child: Text(
@@ -68,12 +75,17 @@ class _KetQuaState extends State<KetQua> {
                             TextStyle(color: Colors.grey, fontSize: 14),
                             border: OutlineInputBorder(
                               borderSide:
-                              BorderSide(color: Colors.blue, width: 1),
+                              BorderSide(color: colorMain, width: 1),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide:
-                              BorderSide(color: Colors.blue, width: 1),
+                              BorderSide(color: colorMain, width: 1),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: colorMain, width: 1),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             contentPadding: EdgeInsets.symmetric(

@@ -34,7 +34,7 @@ class _TabHomeState extends State<TabHome> {
                 borderSide: BorderSide(color: Colors.grey, width: 0.5),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 0.5),
+                borderSide: BorderSide(color: colorMain, width: 0.5),
               ),
             ),
           ),
@@ -64,7 +64,7 @@ class _TabHomeState extends State<TabHome> {
                   "Mẫu phiêu khám",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 30,
+                    fontSize: 22,
                     fontWeight: FontWeight.w700,
                   ),
                 )),
@@ -86,7 +86,7 @@ class _TabHomeState extends State<TabHome> {
                   "Lịch khám",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 30,
+                    fontSize: 22,
                     fontWeight: FontWeight.w700,
                   ),
                 )),
@@ -108,7 +108,7 @@ class _TabHomeState extends State<TabHome> {
                   "Hồ sơ cá nhân",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 30,
+                    fontSize: 22,
                     fontWeight: FontWeight.w700,
                   ),
                 )),

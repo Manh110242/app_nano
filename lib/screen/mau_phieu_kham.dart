@@ -145,7 +145,10 @@ class _MauPhieuKhamState extends State<MauPhieuKham> {
                       ]),
                     ),
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 20,
+                ),
               ],
             ),
           ),

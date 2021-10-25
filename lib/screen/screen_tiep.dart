@@ -14,23 +14,28 @@ class _ScreenTiepState extends State<ScreenTiep> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Đăng ký hồ sơ phòng khám"),
+        backgroundColor: colorMain,
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-                color: colorMain,
-                width: double.infinity,
-                child: Text(
-                  "Đăng ký hồ sơ phòng khám",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 22),
-                ),
-              ),
+              // Container(
+              //   padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+              //   color: colorMain,
+              //   width: double.infinity,
+              //   child: Text(
+              //     "Đăng ký hồ sơ phòng khám",
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //         color: Colors.white,
+              //         fontWeight: FontWeight.w700,
+              //         fontSize: 22),
+              //   ),
+              // ),
               SizedBox(height: 15,),
               Text(
                 "( phiếu này không bắt buộc )",
@@ -85,6 +90,10 @@ class _ScreenTiepState extends State<ScreenTiep> {
                               borderRadius: BorderRadius.circular(15),
                             ),
                             enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: colorMain, width: 1),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: colorMain, width: 1),
                               borderRadius: BorderRadius.circular(15),
                             ),
@@ -163,6 +172,10 @@ class _ScreenTiepState extends State<ScreenTiep> {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: colorMain, width: 1),
                     borderRadius: BorderRadius.circular(15),
                   ),

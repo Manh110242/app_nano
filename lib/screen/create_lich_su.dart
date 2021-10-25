@@ -19,26 +19,15 @@ class _CreateLichSuState extends State<CreateLichSu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
-        ),
+        backgroundColor: colorMain,
         title: Text(
-          "Thêm lịch sử uống thuốc hôm nay",
-          style: TextStyle(
-              color: Colors.black, fontSize: 17, fontWeight: FontWeight.w500),
+          "Thêm lịch sử hôm nay",
         ),
         actions: [
           IconButton(
             icon: Icon(
               Icons.add_a_photo_outlined,
-              color: Colors.black,
+              color: Colors.white,
             ),
             onPressed: () async {
               img = (await _picker.pickImage(source: ImageSource.camera))!;

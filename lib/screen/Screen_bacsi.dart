@@ -1,4 +1,5 @@
 import 'package:app_nano/screen/screen_tiep.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../color_main.dart';
@@ -49,9 +50,9 @@ class _ScreenBacSiState extends State<ScreenBacSi> {
                     shape: BoxShape.circle, color: colorMain.withOpacity(0.5)),
                 child: Center(
                   child: Icon(
-                    Icons.add,
-                    color: Colors.black,
+                    CupertinoIcons.person,
                     size: 70,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -67,49 +68,41 @@ class _ScreenBacSiState extends State<ScreenBacSi> {
                 height: 25,
               ),
               ItemInput(
-                controller: phone,
-                title: "Số điện thoại:",
-                hint: "Nhập số điện thoại"
-              ),
+                  controller: phone,
+                  title: "Số điện thoại:",
+                  hint: "Nhập số điện thoại"),
               ItemInput(
                   controller: namepk,
                   title: "Tên phòng khám:",
-                  hint: "Nhập tên phòng khám"
-              ),
+                  hint: "Nhập tên phòng khám"),
               ItemInput(
-                  controller: address,
-                  title: "Địa chỉ:",
-                  hint: "Nhập địa chỉ"
-              ),
+                  controller: address, title: "Địa chỉ:", hint: "Nhập địa chỉ"),
               ItemInput(
                   controller: giayphep,
                   title: "Giấy phép hành nghề:",
-                  hint: "Nhập giấy phép"
-              ),
+                  hint: "Nhập giấy phép"),
               ItemInput(
                   controller: name,
                   title: "Tên người sở hữu:",
-                  hint: "Nhập tên người sở hữu"
-              ),
+                  hint: "Nhập tên người sở hữu"),
               ItemInput(
                   controller: cmt,
                   title: "Số CMND/CCCD:",
-                  hint: "Nhập CMND/CCCD"
-              ),
+                  hint: "Nhập CMND/CCCD"),
               SizedBox(
                 height: 15,
               ),
               InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenTiep()));
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ScreenTiep()));
                 },
                 child: Container(
                   width: 150,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: colorMain,
-                    borderRadius: BorderRadius.circular(20)
-                  ),
+                      color: colorMain,
+                      borderRadius: BorderRadius.circular(20)),
                   child: Center(
                     child: Text(
                       "Tiếp",
@@ -163,11 +156,15 @@ class _ScreenBacSiState extends State<ScreenBacSi> {
                   hintText: hint,
                   hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 1),
+                    borderSide: BorderSide(color: colorMain, width: 1),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 1),
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: colorMain, width: 1),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   contentPadding: EdgeInsets.symmetric(horizontal: 15)),

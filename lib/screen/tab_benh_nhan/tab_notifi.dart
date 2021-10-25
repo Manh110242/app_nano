@@ -13,21 +13,19 @@ class _TabNotifiBNState extends State<TabNotifiBN> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
         title: Text(
           "Thông báo",
-          style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
         leading: Container(),
         leadingWidth: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: colorMain,
       ),
       body: SafeArea(
         child: ListView(
           children: List.generate(
             3,
-            (index) => ItemNotifi(index == 2 ? true : false),
+                (index) => ItemNotifi(index == 2 ? true : false),
           ),
         ),
       ),
@@ -44,44 +42,26 @@ class _TabNotifiBNState extends State<TabNotifiBN> {
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.left,
-        text: !check
-            ? TextSpan(children: [
-                TextSpan(
-                  text: "Lịch khám bệnh của bạn với bác sĩ ",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 17,
-                  ),
-                ),
-                TextSpan(
-                  text: "Nguyễn Văn A",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 17),
-                ),
-                TextSpan(
-                  text: " bắt đầu sau 30 phút",
-                  style: TextStyle(color: Colors.black, fontSize: 17),
-                ),
-              ])
-            : TextSpan(children: [
-                TextSpan(
-                  text: "Chúc mừng! ",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 17),
-                ),
-                TextSpan(
-                  text: "Bạn đã đăng ký thành công.",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 17,
-                  ),
-                ),
-              ]),
+        text: TextSpan(children: [
+          TextSpan(
+            text: "Lịch khám bệnh của bạn với bệnh nhân ",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 17,
+            ),
+          ),
+          TextSpan(
+            text: "Nguyễn Văn A",
+            style: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.w700, fontSize: 17),
+          ),
+          TextSpan(
+            text: " bắt đầu sau 30 phút",
+            style: TextStyle(color: Colors.black, fontSize: 17),
+          ),
+        ]),
       ),
     );
   }
 }
+
