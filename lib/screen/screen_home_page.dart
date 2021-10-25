@@ -1,14 +1,18 @@
 import 'package:app_nano/screen/tab/tab_Home.dart';
+import 'package:app_nano/screen/tab/tab_account.dart';
+import 'package:app_nano/screen/tab/tab_lich.dart';
+import 'package:app_nano/screen/tab/tab_notifi.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ScreenSearch extends StatefulWidget {
+import '../color_main.dart';
+
+class ScreenHomePage extends StatefulWidget {
   @override
-  _ScreenSearchState createState() => _ScreenSearchState();
+  _ScreenHomePageState createState() => _ScreenHomePageState();
 }
 
-class _ScreenSearchState extends State<ScreenSearch> {
-  Color col = Color(0xff008B8B);
+class _ScreenHomePageState extends State<ScreenHomePage> {
   int page = 0;
   late PageController _controller;
   @override
@@ -27,9 +31,9 @@ class _ScreenSearchState extends State<ScreenSearch> {
           controller: _controller,
           children: [
             TabHome(),
-            Container(),
-            Container(),
-            Container(),
+            TabLich(),
+            TabNotifi(),
+            TabAccount(),
           ],
         ),
       ),
@@ -108,7 +112,7 @@ class _ScreenSearchState extends State<ScreenSearch> {
           child: Icon(
             iconData,
             size: 30,
-            color: index == page ? col : Colors.black,
+            color: index == page ? colorMain : Colors.black,
           ),
         ),
       ),

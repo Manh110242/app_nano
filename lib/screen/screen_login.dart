@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../color_main.dart';
+
 class ScreenLogin extends StatefulWidget {
 
   @override
@@ -13,7 +15,6 @@ class ScreenLogin extends StatefulWidget {
 class _ScreenLoginState extends State<ScreenLogin> {
   late TextEditingController account;
   late TextEditingController pass;
-  bool _loadingButton = false;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -47,41 +48,45 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 width: 200,
                 height: 200,
               ),
-              itemInput("Tài khoản", CupertinoIcons.person_fill, account),
+              itemInput("Tài khoản", CupertinoIcons.person_fill, account,false),
               SizedBox(
                 height: 15,
               ),
-              itemInput("Mật khẩu", CupertinoIcons.lock_fill, pass),
+              itemInput("Mật khẩu", CupertinoIcons.lock_fill, pass, true),
               SizedBox(
                 height: 25,
               ),
               InkWell(
                 onTap: () {
-                  if (account.text != "" && pass.text != "") {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomePage()));
-                  } else {
-                    showDialog(
-                        context: context,
-                        builder: (conetx) => AlertDialog(
-                          content: Text("Vui lòng nhập đầy đủ thông tin"),
-                          actions: [
-                            FlatButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Text("Đóng"))
-                          ],
-                        ));
-                  }
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HomePage()));
+                  // if (account.text != "" && pass.text != "") {
+                  //   Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //           builder: (context) => HomePage()));
+                  // } else {
+                  //   showDialog(
+                  //       context: context,
+                  //       builder: (conetx) => AlertDialog(
+                  //         content: Text("Vui lòng nhập đầy đủ thông tin"),
+                  //         actions: [
+                  //           FlatButton(
+                  //               onPressed: () {
+                  //                 Navigator.pop(context);
+                  //               },
+                  //               child: Text("Đóng"))
+                  //         ],
+                  //       ));
+                  // }
                 },
                 child: Container(
                   height: 45,
                   margin: EdgeInsets.symmetric(horizontal: 30),
                   decoration: BoxDecoration(
-                    color: Color(0xff6495ED),
+                    color: Color.fromRGBO(102,150,200,1),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Center(
@@ -102,7 +107,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           style: TextStyle(color: Colors.black)),
                       TextSpan(
                         text: "Đăng ký",
-                        style: TextStyle(color: Colors.teal),
+                        style: TextStyle(color: colorMain),
                         recognizer: new TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.push(
@@ -124,7 +129,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
   }
 
   Widget itemInput(
-      String hint, IconData icon, TextEditingController controller) {
+      String hint, IconData icon, TextEditingController controller, bool obscureText) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: ClipRRect(
@@ -132,6 +137,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
         child: TextFormField(
           controller: controller,
           cursorColor: Colors.white,
+          obscureText: obscureText,
           style: TextStyle(
             color: Colors.grey.shade200,
             fontSize: 15,
@@ -142,12 +148,12 @@ class _ScreenLoginState extends State<ScreenLogin> {
               color: Colors.white,
             ),
             hintText: hint,
-            hintStyle: TextStyle(
-              color: Colors.grey.shade200,
+            hintStyle: TextStyle (
+              color:  Colors.grey.shade400,
               fontSize: 15,
             ),
             border: InputBorder.none,
-            fillColor: Color(0xff3333FF),
+            fillColor: Color.fromRGBO(23,112,219,1),
             filled: true,
             contentPadding: EdgeInsets.only(left: 15, right: 15, top: 15),
           ),

@@ -1,16 +1,18 @@
-import 'package:app_nano/screen/mau_phieu_kham.dart';
-import 'package:app_nano/screen/tab/tab_account.dart';
-import 'package:app_nano/screen/tab/tab_lich.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../color_main.dart';
+import '../create_hs_benh.dart';
+import '../lich_su.dart';
+import '../screen_sang_loc_benh.dart';
+import '../tao_lo_trinh.dart';
 
-class TabHome extends StatefulWidget {
+class TabHomeBN extends StatefulWidget {
   @override
-  _TabHomeState createState() => _TabHomeState();
+  _TabHomeBNState createState() => _TabHomeBNState();
 }
 
-class _TabHomeState extends State<TabHome> {
+class _TabHomeBNState extends State<TabHomeBN> {
   TextEditingController search = TextEditingController();
 
   @override
@@ -50,7 +52,8 @@ class _TabHomeState extends State<TabHome> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>MauPhieuKham()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CreateHSBenh()));
               },
               child: Container(
                 height: 50,
@@ -61,10 +64,10 @@ class _TabHomeState extends State<TabHome> {
                 ),
                 child: Center(
                     child: Text(
-                  "Mẫu phiêu khám",
+                  "Tạo hồ sơ bệnh nhân",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 30,
+                    fontSize: 22,
                     fontWeight: FontWeight.w700,
                   ),
                 )),
@@ -72,7 +75,8 @@ class _TabHomeState extends State<TabHome> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>TabLich()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ScreenSanglocBenh()));
               },
               child: Container(
                 height: 50,
@@ -83,10 +87,10 @@ class _TabHomeState extends State<TabHome> {
                 ),
                 child: Center(
                     child: Text(
-                  "Lịch khám",
+                  "Sàng lọc bệnh",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 30,
+                    fontSize: 22,
                     fontWeight: FontWeight.w700,
                   ),
                 )),
@@ -94,7 +98,8 @@ class _TabHomeState extends State<TabHome> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>TabAccount()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => TaoLoTrinh()));
               },
               child: Container(
                 height: 50,
@@ -105,13 +110,36 @@ class _TabHomeState extends State<TabHome> {
                 ),
                 child: Center(
                     child: Text(
-                  "Hồ sơ cá nhân",
+                  "Theo giỏi điều trị",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 30,
+                    fontSize: 22,
                     fontWeight: FontWeight.w700,
                   ),
                 )),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LichSuUongThuoc()));
+              },
+              child: Container(
+                height: 50,
+                margin: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+                decoration: BoxDecoration(
+                  color: colorMain,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Center(
+                    child: Text(
+                      "Lịch sử uống thuốc",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    )),
               ),
             ),
           ],

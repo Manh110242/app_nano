@@ -1,7 +1,10 @@
 import 'package:app_nano/screen/Screen_bacsi.dart';
 import 'package:app_nano/screen/screen_benh_nhan.dart';
+import 'package:app_nano/screen/screen_home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../color_main.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,7 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Color col = Color(0xff008B8B);
 
   @override
   Widget build(BuildContext context) {
@@ -21,19 +23,19 @@ class _HomePageState extends State<HomePage> {
           Text(
             "Bạn là...",
             style: TextStyle(
-                color: col, fontSize: 40, fontWeight: FontWeight.w700),
+                color: colorMain, fontSize: 40, fontWeight: FontWeight.w700),
           ),
           InkWell(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenBacSi()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenHomePage()));
             },
             child: Container(
               height: 70,
               margin: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
               decoration: BoxDecoration(
-                color: Color(0xff66CCCC),
+                color: colorMain,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Color(0xff333399), width: 1)
+                border: Border.all(color: Color.fromRGBO(69,122,177,1), width: 1)
               ),
               child: Center(
                   child: Text(
@@ -55,9 +57,9 @@ class _HomePageState extends State<HomePage> {
               margin: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
               padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
               decoration: BoxDecoration(
-                color: Color(0xff66CCCC),
+                color: colorMain,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Color(0xff333399), width: 1)
+                border: Border.all(color: Color.fromRGBO(69,122,177,1), width: 1)
               ),
               child: Center(
                   child: Text(

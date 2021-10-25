@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../color_main.dart';
+import 'ban_la.dart';
+
 class ScreenSignIn extends StatefulWidget {
   @override
   _ScreenSignInState createState() => _ScreenSignInState();
@@ -13,30 +16,35 @@ class _ScreenSignInState extends State<ScreenSignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: colorMain,
+        title: Text("Đăng ký tài khoản"),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: 70,
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                decoration: BoxDecoration(
-                  color: Color(0xff66CCCC),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                    child: Text(
-                  "Đăng ký tài khoản",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold),
-                )),
-              ),
-              Divider(
-                thickness: 2,
-              ),
+              // Container(
+              //   height: 70,
+              //   margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+              //   decoration: BoxDecoration(
+              //     color: colorMain,
+              //     borderRadius: BorderRadius.circular(20),
+              //   ),
+              //   child: Center(
+              //       child: Text(
+              //     "Đăng ký tài khoản",
+              //     style: TextStyle(
+              //         color: Colors.white,
+              //         fontSize: 22,
+              //         fontWeight: FontWeight.bold),
+              //   )),
+              // ),
+              // Divider(
+              //   thickness: 2,
+              // ),
               SizedBox(height: 100,),
               ItemInput(
                 hint: "Nhập họ tên",
@@ -58,22 +66,30 @@ class _ScreenSignInState extends State<ScreenSignIn> {
                   title: "Mật khẩu",
                   controller: pass
               ),
-              Container(
-                height: 40,
-                width: 200,
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                decoration: BoxDecoration(
-                  color: Color(0xff66CCCC),
-                  borderRadius: BorderRadius.circular(20),
+              InkWell(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BanLa()));
+                },
+                child: Container(
+                  height: 40,
+                  width: 200,
+                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                  decoration: BoxDecoration(
+                    color: colorMain,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                      child: Text(
+                        "Hoàn tất",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      "Hoàn tất",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold),
-                    )),
               ),
             ],
           ),
@@ -94,7 +110,7 @@ class _ScreenSignInState extends State<ScreenSignIn> {
               title!,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -113,12 +129,12 @@ class _ScreenSignInState extends State<ScreenSignIn> {
                   hintText: hint,
                   hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   contentPadding: EdgeInsets.symmetric(horizontal: 15)),
             ),

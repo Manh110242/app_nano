@@ -1,5 +1,7 @@
-import 'package:app_nano/screen/screen_search.dart';
+import 'package:app_nano/screen/screen_home_page.dart';
 import 'package:flutter/material.dart';
+
+import '../color_main.dart';
 
 class ScreenTiep extends StatefulWidget {
 
@@ -8,7 +10,6 @@ class ScreenTiep extends StatefulWidget {
 }
 
 class _ScreenTiepState extends State<ScreenTiep> {
-  Color col = Color(0xff008B8B);
   TextEditingController   mota = new TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class _ScreenTiepState extends State<ScreenTiep> {
             children: [
               Container(
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-                color: col,
+                color: colorMain,
                 width: double.infinity,
                 child: Text(
                   "Đăng ký hồ sơ phòng khám",
@@ -77,15 +78,15 @@ class _ScreenTiepState extends State<ScreenTiep> {
                         readOnly: true,
                         decoration: InputDecoration(
                             hintText: "Upload",
-                            hintStyle: TextStyle(color: Colors.grey.shade800, fontSize: 14,fontStyle: FontStyle.italic
+                            hintStyle: TextStyle(color: Colors.grey, fontSize: 14,fontStyle: FontStyle.italic
                             ),
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue, width: 1),
-                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide(color: colorMain, width: 1),
+                              borderRadius: BorderRadius.circular(15),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue, width: 1),
-                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide(color: colorMain, width: 1),
+                              borderRadius: BorderRadius.circular(15),
                             ),
                             contentPadding: EdgeInsets.symmetric(horizontal: 15)),
                       ),
@@ -98,13 +99,13 @@ class _ScreenTiepState extends State<ScreenTiep> {
               ),
               InkWell(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenSearch()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenHomePage()));
                 },
                 child: Container(
                   width: 150,
                   height: 40,
                   decoration: BoxDecoration(
-                      color: col,
+                      color: colorMain,
                       borderRadius: BorderRadius.circular(20)
                   ),
                   child: Center(
@@ -158,12 +159,12 @@ class _ScreenTiepState extends State<ScreenTiep> {
                   hintText: hint,
                   hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: colorMain, width: 1),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   contentPadding: EdgeInsets.symmetric(horizontal: 15)),
             ),

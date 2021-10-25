@@ -1,13 +1,14 @@
 import 'package:app_nano/screen/screen_tiep.dart';
 import 'package:flutter/material.dart';
 
+import '../color_main.dart';
+
 class ScreenBacSi extends StatefulWidget {
   @override
   _ScreenBacSiState createState() => _ScreenBacSiState();
 }
 
 class _ScreenBacSiState extends State<ScreenBacSi> {
-  Color col = Color(0xff008B8B);
   TextEditingController phone = new TextEditingController();
   TextEditingController namepk = new TextEditingController();
   TextEditingController address = new TextEditingController();
@@ -18,29 +19,34 @@ class _ScreenBacSiState extends State<ScreenBacSi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: colorMain,
+        title: Text("Đăng ký hồ sơ phòng khám"),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-                color: col,
-                width: double.infinity,
-                child: Text(
-                  "Đăng ký hồ sơ phòng khám",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 22),
-                ),
-              ),
+              // Container(
+              //   padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+              //   color: colorMain,
+              //   width: double.infinity,
+              //   child: Text(
+              //     "Đăng ký hồ sơ phòng khám",
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //         color: Colors.white,
+              //         fontWeight: FontWeight.w700,
+              //         fontSize: 22),
+              //   ),
+              // ),
               Container(
                 width: 110,
                 height: 110,
                 margin: EdgeInsets.only(top: 20, bottom: 10),
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle, color: col.withOpacity(0.5)),
+                    shape: BoxShape.circle, color: colorMain.withOpacity(0.5)),
                 child: Center(
                   child: Icon(
                     Icons.add,
@@ -101,7 +107,7 @@ class _ScreenBacSiState extends State<ScreenBacSi> {
                   width: 150,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: col,
+                    color: colorMain,
                     borderRadius: BorderRadius.circular(20)
                   ),
                   child: Center(
@@ -117,7 +123,7 @@ class _ScreenBacSiState extends State<ScreenBacSi> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 40,
               ),
             ],
           ),
@@ -158,11 +164,11 @@ class _ScreenBacSiState extends State<ScreenBacSi> {
                   hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.blue, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.blue, width: 1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   contentPadding: EdgeInsets.symmetric(horizontal: 15)),
             ),
