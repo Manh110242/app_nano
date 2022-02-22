@@ -20,6 +20,7 @@ class _KetQuaState extends State<KetQua> {
         centerTitle: true,
         backgroundColor: colorMain,
         title: Text('Kết quả'),
+        leading: IconButton(icon: Icon(Icons.arrow_back,color: Colors.black,),onPressed: () => Navigator.pop(context),),
       ),
       body: SafeArea(
         child: SingleChildScrollView(

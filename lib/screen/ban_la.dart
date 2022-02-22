@@ -62,7 +62,7 @@ class _BanLaState extends State<BanLa> {
                   borderRadius: BorderRadius.circular(20),),
               child: Center(
                   child: Text(
-                "Bênh nhân",
+                "bệnh nhân",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 22,

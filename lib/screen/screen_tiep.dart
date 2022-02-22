@@ -15,6 +15,7 @@ class _ScreenTiepState extends State<ScreenTiep> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(icon: Icon(Icons.arrow_back,color: Colors.black,),onPressed: () => Navigator.pop(context),),
         title: Text("Đăng ký hồ sơ phòng khám"),
         backgroundColor: colorMain,
         centerTitle: true,

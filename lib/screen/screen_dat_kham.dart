@@ -33,6 +33,7 @@ class _ScreenDatKhamState extends State<ScreenDatKham> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(icon: Icon(Icons.arrow_back,color: Colors.black,),onPressed: () => Navigator.pop(context),),
         centerTitle: true,
         backgroundColor: colorMain,
         title: Text('Đặt khám'),

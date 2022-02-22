@@ -12,13 +12,18 @@ class _TabNotifiState extends State<TabNotifi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leadingWidth: 0,
+        leading: Container(),
+        //leading: IconButton(icon: Icon(Icons.arrow_back,color: Colors.black,),onPressed: () => Navigator.pop(context),),
+        backgroundColor: Colors.white,
         title: Text(
           "Thông báo",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
+          ),
         ),
-        centerTitle: true,
-        leading: Container(),
-        leadingWidth: 0,
-        backgroundColor: colorMain,
+        centerTitle: false,
       ),
       body: SafeArea(
         child: ListView(
@@ -35,15 +40,15 @@ class _TabNotifiState extends State<TabNotifi> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       decoration: BoxDecoration(
-          color: !check ? colorMain.withOpacity(0.1) : Colors.white,
-          border: Border(bottom: BorderSide(color: Colors.black, width: 1))),
+          color: Colors.white,
+          border: Border(bottom: BorderSide(color: Colors.black, width: 0.5))),
       child: RichText(
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.left,
         text: TextSpan(children: [
           TextSpan(
-            text: "Lịch khám bệnh của bạn với bệnh nhân ",
+            text: "Đã nhận lịch của ",
             style: TextStyle(
               color: Colors.black,
               fontSize: 17,
@@ -55,7 +60,7 @@ class _TabNotifiState extends State<TabNotifi> {
                 color: Colors.black, fontWeight: FontWeight.w700, fontSize: 17),
           ),
           TextSpan(
-            text: " bắt đầu sau 30 phút",
+            text: " vào 15/12 15h30",
             style: TextStyle(color: Colors.black, fontSize: 17),
           ),
         ]),

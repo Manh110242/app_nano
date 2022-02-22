@@ -48,7 +48,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 width: 200,
                 height: 200,
               ),
-              itemInput("Tài khoản", CupertinoIcons.person_fill, account,false),
+              itemInput("SĐT hoặc Email", CupertinoIcons.person_fill, account,false),
               SizedBox(
                 height: 15,
               ),
@@ -61,7 +61,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => HomePage()));
+                          builder: (context) => HomePage(check: true,)));
                   // if (account.text != "" && pass.text != "") {
                   //   Navigator.push(
                   //       context,
@@ -83,41 +83,65 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   // }
                 },
                 child: Container(
-                  height: 45,
+                  height: 50,
                   margin: EdgeInsets.symmetric(horizontal: 30),
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(102,150,200,1),
-                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(23,122,219,1),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
                       child: Text(
                         "Đăng nhập",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w700),
                       )),
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: 5,
               ),
               RichText(
                   text: TextSpan(
                     children: [
                       TextSpan(
-                          text: "Chưa có tài khoản! ",
-                          style: TextStyle(color: Colors.black)),
-                      TextSpan(
-                        text: "Đăng ký",
-                        style: TextStyle(color: colorMain),
+                        text: "Quên mật khẩu",
+                        style: TextStyle(color: Color.fromRGBO(23,122,219,1)),
                         recognizer: new TapGestureRecognizer()
                           ..onTap = () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ScreenSignIn()));
+
                           },
                       ),
                     ],
                   )),
+              SizedBox(
+                height: 20,
+              ),
+              Divider(
+                thickness: 1,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ScreenSignIn()));
+                },
+                child: Container(
+                  height: 50,
+                  margin: EdgeInsets.symmetric(horizontal: 30),
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(84,194,66,1),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Center(
+                      child: Text(
+                        "Đăng ký",
+                        style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w700),
+                      )),
+                ),
+              ),
               SizedBox(
                 height: 20,
               ),
@@ -132,31 +156,37 @@ class _ScreenLoginState extends State<ScreenLogin> {
       String hint, IconData icon, TextEditingController controller, bool obscureText) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: TextFormField(
-          controller: controller,
-          cursorColor: Colors.white,
-          obscureText: obscureText,
-          style: TextStyle(
-            color: Colors.grey.shade200,
+      child: TextFormField(
+        controller: controller,
+        cursorColor: Colors.black,
+        obscureText: obscureText,
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 15,
+        ),
+        decoration: InputDecoration(
+            // prefixIcon: Icon(
+            //   icon,
+            //   color: Colors.white,
+            // ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Color.fromRGBO(141,141,141,1),width: 1),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Color.fromRGBO(141,141,141,1),width: 1),
+          ),
+
+          hintText: hint,
+          hintStyle: TextStyle (
+            color:  Color.fromRGBO(141,141,141,1),
             fontSize: 15,
           ),
-          decoration: InputDecoration(
-            prefixIcon: Icon(
-              icon,
-              color: Colors.white,
-            ),
-            hintText: hint,
-            hintStyle: TextStyle (
-              color:  Colors.grey.shade400,
-              fontSize: 15,
-            ),
-            border: InputBorder.none,
-            fillColor: Color.fromRGBO(23,112,219,1),
-            filled: true,
-            contentPadding: EdgeInsets.only(left: 15, right: 15, top: 15),
-          ),
+          border: InputBorder.none,
+          fillColor: Color.fromRGBO(227,227,227,1),
+          filled: true,
+          //contentPadding: EdgeInsets.only(left: 15, right: 15, top: 15),
         ),
       ),
     );

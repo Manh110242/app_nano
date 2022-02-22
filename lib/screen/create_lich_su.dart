@@ -19,6 +19,7 @@ class _CreateLichSuState extends State<CreateLichSu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(icon: Icon(Icons.arrow_back,color: Colors.black,),onPressed: () => Navigator.pop(context),),
         backgroundColor: colorMain,
         title: Text(
           "Thêm lịch sử hôm nay",

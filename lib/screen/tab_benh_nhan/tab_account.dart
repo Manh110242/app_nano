@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../color_main.dart';
+import '../chat.dart';
 
 class TabAccountBN extends StatefulWidget {
   @override
@@ -13,249 +14,125 @@ class _TabAccountBNState extends State<TabAccountBN> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Container(),
-        leadingWidth: 0,
-        centerTitle: true,
-        title: Text("Tài khoản"),
-        backgroundColor: colorMain,
-      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 40),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 20,
-                ),
-                Stack(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 60, bottom: 15),
-                      height: 100,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: colorMain, width: 1),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            "Bệnh nhân Nguyễn Văn A",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: colorMain,
-                      ),
-                      child: Center(
-                        child: Icon(
-                          CupertinoIcons.person,
-                          size: 70,
-                          color: Colors.white,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                Text(
-                  "Hồ sơ cá nhân",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 22),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(color: colorMain, width: 1))),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.circle,
-                        color: colorMain,
-                        size: 17,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        child: Text(
-                          "Hồ sơ cá nhân",
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 17),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(
-                        Icons.navigate_next,
-                        color: Colors.black,
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(color: colorMain, width: 1))),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.circle,
-                        color: colorMain,
-                        size: 17,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        child: Text(
-                          "Cài đặt cá nhân",
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 17),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(
-                        Icons.navigate_next,
-                        color: Colors.black,
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
                   height: 30,
                 ),
+                Container(
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xffEDEDED),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      CupertinoIcons.person_fill,
+                      size: 70,
+                      color: colorMain,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Container(
+                  width: double.infinity,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "BN. VŨ Hoài Nam".toUpperCase(),
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 25,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "ID: BN12345".toUpperCase(),
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 25,
+                            fontWeight: FontWeight.w700
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
                 Text(
-                  "Nôi dung",
+                  "Ngày sinh: 03/08/1960",
                   style: TextStyle(
                       color: Colors.black,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 22),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(color: colorMain, width: 1))),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.circle,
-                        color: colorMain,
-                        size: 17,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        child: Text(
-                          "Quản lý hồ sơ khách hàng",
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 17),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(
-                        Icons.navigate_next,
-                        color: Colors.black,
-                      )
-                    ],
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400
                   ),
                 ),
-                SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(color: colorMain, width: 1))),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.circle,
-                        color: colorMain,
-                        size: 17,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        child: Text(
-                          "Báo cáo, yêu cầu khách hàng",
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 17),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(
-                        Icons.navigate_next,
-                        color: Colors.black,
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Hỗ trợ và chính sách",
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 22),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Icon(
-                      Icons.navigate_next,
+                SizedBox(height: 10,),
+                Text(
+                  "Nghề nghiệp: Đã về hưu",
+                  style: TextStyle(
                       color: Colors.black,
-                      size: 30,
-                    )
-                  ],
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400
+                  ),
                 ),
+                SizedBox(height: 10,),
+                Text(
+                  "Địa chỉ: Vĩnh Yên, Vĩnh Phúc",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400
+                  ),
+                ),
+                SizedBox(height: 10,),
+                Text(
+                  "Bác sĩ phụ trách: BS123654 ",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400
+                  ),
+                ),
+                SizedBox(height: 10,),
+                Text(
+                  "Lịch khám sắp tới: ",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400
+                  ),
+                ),
+                Text(
+                  "   - STT: 12",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400
+                  ),
+                ),
+                Text(
+                  "   - Thời gian: 20h00, 18/01/2021 ",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400
+                  ),
+                ),
+                SizedBox(height: 20,),
+
               ],
             ),
           ),

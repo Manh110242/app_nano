@@ -1,3 +1,5 @@
+import 'package:app_nano/screen/screen_home.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../color_main.dart';
@@ -10,86 +12,284 @@ class ScreenSignIn extends StatefulWidget {
 
 class _ScreenSignInState extends State<ScreenSignIn> {
   TextEditingController name = new TextEditingController();
-  TextEditingController phone = new TextEditingController();
-  TextEditingController username = new TextEditingController();
+  TextEditingController name1 = new TextEditingController();
+  TextEditingController email = new TextEditingController();
   TextEditingController pass = new TextEditingController();
+  TextEditingController day = new TextEditingController();
+  TextEditingController month = new TextEditingController();
+  TextEditingController year = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: colorMain,
-        title: Text("Đăng ký tài khoản"),
+        leading: IconButton(icon: Icon(Icons.arrow_back,color: Colors.black,),onPressed: () => Navigator.pop(context),),
+        backgroundColor: Colors.white,
+        title: Text(
+          "Đăng ký",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
+          ),
+        ),
+        centerTitle: false,
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Container(
-              //   height: 70,
-              //   margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-              //   decoration: BoxDecoration(
-              //     color: colorMain,
-              //     borderRadius: BorderRadius.circular(20),
-              //   ),
-              //   child: Center(
-              //       child: Text(
-              //     "Đăng ký tài khoản",
-              //     style: TextStyle(
-              //         color: Colors.white,
-              //         fontSize: 22,
-              //         fontWeight: FontWeight.bold),
-              //   )),
-              // ),
-              // Divider(
-              //   thickness: 2,
-              // ),
-              SizedBox(height: 100,),
-              ItemInput(
-                hint: "Nhập họ tên",
-                title: "Họ và tên",
-                controller: name
+              SizedBox(
+                height: 10,
               ),
-              ItemInput(
-                  hint: "Nhập số điện thoại",
-                  title: "Số điện thoại",
-                  controller: phone
+              Text(
+                "Dễ dàng và nhanh chóng",
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                ),
               ),
+              ItemInput(hint: "Họ", controller: name, width: size.width * 0.4),
               ItemInput(
-                  hint: "Nhập tên đăng nhập",
-                  title: "Tên dăng nhập",
-                  controller: username
+                  hint: "Tên", controller: name1, width: size.width * 0.4),
+              ItemInput(
+                  hint: "SĐT hoặc Email", width: size.width, controller: email),
+              ItemInput(hint: "Mật khẩu", width: size.width, controller: pass),
+              Row(
+                children: [
+                  Text(
+                    "Ngày sinh",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    "*",
+                    style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    ":",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
               ),
-              ItemInput(
-                  hint: "Nhập mật khẩu",
-                  title: "Mật khẩu",
-                  controller: pass
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      controller: day,
+                      decoration: InputDecoration(
+                          hintText: "Ngày",
+                          fillColor: Color.fromRGBO(227, 227, 227, 1),
+                          filled: true,
+                          hintStyle:
+                              TextStyle(color: Colors.grey, fontSize: 16),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(170, 170, 170, 1),
+                                width: 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(170, 170, 170, 1),
+                                width: 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(170, 170, 170, 1),
+                                width: 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          contentPadding: EdgeInsets.symmetric(horizontal: 15)),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: TextField(
+                      controller: month,
+                      decoration: InputDecoration(
+                          hintText: "Tháng",
+                          fillColor: Color.fromRGBO(227, 227, 227, 1),
+                          filled: true,
+                          hintStyle:
+                              TextStyle(color: Colors.grey, fontSize: 16),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(170, 170, 170, 1),
+                                width: 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(170, 170, 170, 1),
+                                width: 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(170, 170, 170, 1),
+                                width: 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          contentPadding: EdgeInsets.symmetric(horizontal: 15)),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: TextField(
+                      controller: year,
+                      decoration: InputDecoration(
+                          hintText: "Năm",
+                          fillColor: Color.fromRGBO(227, 227, 227, 1),
+                          filled: true,
+                          hintStyle:
+                              TextStyle(color: Colors.grey, fontSize: 16),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(170, 170, 170, 1),
+                                width: 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(170, 170, 170, 1),
+                                width: 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(170, 170, 170, 1),
+                                width: 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          contentPadding: EdgeInsets.symmetric(horizontal: 15)),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Text(
+                      "Giới tính:",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  Expanded(
+                      child: DropdownButtonFormField(
+                    decoration: InputDecoration(
+                      enabledBorder: InputBorder.none,
+                      contentPadding:
+                          EdgeInsets.only(left: 10, right: 10, top: 10),
+                    ),
+                    dropdownColor: Colors.white,
+                    isExpanded: true,
+                    alignment: Alignment.centerRight,
+                    onChanged: (value) {},
+                    hint: Container(
+                      child: Center(
+                          child: Text(
+                        "-Chọn-",
+                        textAlign: TextAlign.center,
+                      )),
+                    ),
+                    items: [
+                      DropdownMenuItem(
+                        child: Text(
+                          "Nam",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        value: "Nam",
+                        alignment: Alignment.center,
+                      ),
+                      DropdownMenuItem(
+                        child: Text(
+                          "Nữ",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        value: "Nữ",
+                        alignment: Alignment.center,
+                      ),
+                    ],
+                  ))
+                ],
+              ),
+              Divider(
+                thickness: 1,
               ),
               InkWell(
-                onTap: (){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => BanLa()));
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage(check: false,)));
                 },
                 child: Container(
-                  height: 40,
-                  width: 200,
+                  height: 60,
+                  width: 300,
                   margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                   decoration: BoxDecoration(
-                    color: colorMain,
-                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
                       child: Text(
-                        "Hoàn tất",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold),
-                      )),
+                    "Hoàn tất",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold),
+                  )),
                 ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Điều khoản sử dụng",
+                    style: TextStyle(
+                      color: colorMain,
+                      fontSize: 15,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
               ),
             ],
           ),
@@ -99,49 +299,47 @@ class _ScreenSignInState extends State<ScreenSignIn> {
   }
 
   Widget ItemInput(
-      {String? hint, String? title, TextEditingController? controller}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+      {String? hint,
+      TextEditingController? controller,
+      required double width}) {
+    return Container(
+      width: width,
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            child: Text(
-              title!,
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17),
-            ),
-          ),
-          SizedBox(
-            width: 15,
-          ),
-          Container(
-            height: 40,
-            width: MediaQuery.of(context).size.width * 0.6,
             child: TextField(
               controller: controller,
               decoration: InputDecoration(
                   hintText: hint,
-                  hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
+                  fillColor: Color.fromRGBO(227, 227, 227, 1),
+                  filled: true,
+                  hintStyle: TextStyle(color: Colors.grey, fontSize: 16),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: colorMain, width: 1),
-                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(
+                        color: Color.fromRGBO(170, 170, 170, 1), width: 1),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: colorMain, width: 1),
-                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(
+                        color: Color.fromRGBO(170, 170, 170, 1), width: 1),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: colorMain, width: 1),
-                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(
+                        color: Color.fromRGBO(170, 170, 170, 1), width: 1),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   contentPadding: EdgeInsets.symmetric(horizontal: 15)),
             ),
+          ),
+          SizedBox(
+            width: 5,
+          ),
+          Text(
+            "*",
+            style: TextStyle(fontSize: 17, color: Colors.red),
           ),
         ],
       ),

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../color_main.dart';
 
-class TabLichBN extends StatefulWidget {
+class TabLichNT extends StatefulWidget {
   @override
-  _TabLichBNState createState() => _TabLichBNState();
+  _TabLichNTState createState() => _TabLichNTState();
 }
 
-class _TabLichBNState extends State<TabLichBN> {
+class _TabLichNTState extends State<TabLichNT> {
 
   @override
   Widget build(BuildContext context) {

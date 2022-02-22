@@ -4,6 +4,7 @@ import 'package:app_nano/screen/show_image.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import 'Nhat_ky.dart';
 import 'create_lich_su.dart';
 
 class LichSuUongThuoc extends StatefulWidget {
@@ -47,28 +48,42 @@ class _LichSuUongThuocState extends State<LichSuUongThuoc> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: colorMain,
+        leading: IconButton(icon: Icon(Icons.arrow_back,color: Colors.black,),onPressed: () => Navigator.pop(context),),
+        backgroundColor: Colors.white,
         title: Text(
-          "Lịch sữ uống thuốc",
-        ),
-        actions: [
-          TextButton(
-            onPressed: () async {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CreateLichSu()));
-            },
-            child: Text(
-              "Thêm mới",
-              style: TextStyle(color: Colors.white),
-            ),
+          "Lịch sử dụng thuốc",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
           ),
-        ],
+        ),
+        centerTitle: true,
       ),
       body: SafeArea(
         child: ListView.builder(
           padding: EdgeInsets.all(10),
           itemCount: ngay.length,
-          itemBuilder: (_, index) => itemLichSU(ngay[index]),
+          itemBuilder: (_, index) => InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>NhatKy(title: "Nhật ký dùng thốc ngày ${index + 1}",)));
+            },
+            child: Container(
+              width: double.infinity,
+              height: 90,
+              decoration: BoxDecoration(
+                  color: index %2 == 0 ? Color.fromRGBO(226,226,226,1) : Color.fromRGBO(216, 237, 243, 1),
+                  borderRadius: BorderRadius.circular(22)),
+              child: Center(
+                child: Text(
+                  "Ngày ${index + 1}",
+                  style: TextStyle(
+                      fontSize: 17,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );

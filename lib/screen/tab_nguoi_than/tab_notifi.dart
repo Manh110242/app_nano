@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 
 import '../../color_main.dart';
 
-class TabNotifiBN extends StatefulWidget {
+class TabNotifiNT extends StatefulWidget {
   @override
-  _TabNotifiBNState createState() => _TabNotifiBNState();
+  _TabNotifiNTState createState() => _TabNotifiNTState();
 }
 
-class _TabNotifiBNState extends State<TabNotifiBN> {
+class _TabNotifiNTState extends State<TabNotifiNT> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         //leading: IconButton(icon: Icon(Icons.arrow_back,color: Colors.black,),onPressed: () => Navigator.pop(context),),
+        backgroundColor: Colors.white,
         leadingWidth: 0,
         leading: Container(),
-        backgroundColor: Colors.white,
         title: Text(
           "Thông báo",
           style: TextStyle(
@@ -48,10 +48,18 @@ class _TabNotifiBNState extends State<TabNotifiBN> {
         textAlign: TextAlign.left,
         text: TextSpan(children: [
           TextSpan(
-            text: "Đã đặt lịch thành công ",
+            text: "Người bệnh đã ",
             style: TextStyle(
               color: Colors.black,
               fontSize: 17,
+            ),
+          ),
+          TextSpan(
+            text: "quên uống thuốc",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 17,
+              fontWeight: FontWeight.w700
             ),
           ),
           TextSpan(

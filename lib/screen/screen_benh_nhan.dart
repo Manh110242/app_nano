@@ -31,68 +31,41 @@ class _ScreenBenhNhanState extends State<ScreenBenhNhan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: PageView(
-          physics: NeverScrollableScrollPhysics(),
-          controller: _controller,
-          children: [
-            TabHomeBN(),
-            TabLichBN(),
-            TabNotifiBN(),
-            TabAccountBN(),
+        body: SafeArea(
+          child: PageView(
+            physics: NeverScrollableScrollPhysics(),
+            controller: _controller,
+            children: [
+              TabHomeBN(),
+              TabNotifiBN(),
+              TabAccountBN(),
+            ],
+          ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          onTap: (val) {
+            page = val;
+            _controller.animateToPage(
+              page,
+              duration: Duration(milliseconds: 1),
+              curve: Curves.ease,
+            );
+            setState(() {});
+          },
+          unselectedItemColor: Colors.grey,
+          fixedColor: colorMain,
+          currentIndex: page,
+          elevation: 5,
+          items: [
+            BottomNavigationBarItem(icon: Icon(CupertinoIcons.home, size: 30,),
+                title: Text("Trang chủ")),
+            BottomNavigationBarItem(icon: Icon(CupertinoIcons.mail, size: 30,),
+                title: Text("Thông báo")),
+            BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.person_fill, size: 30,),
+                title: Text("Cá nhân")),
           ],
         ),
-      ),
-      bottomNavigationBar: Container(
-        height: 50,
-        child: Stack(
-          children: [
-            Row(
-              children: List.generate(
-                4,
-                (index) => ItemBottom(
-                  index == 0
-                      ? CupertinoIcons.home
-                      : index == 1
-                          ? CupertinoIcons.calendar
-                          : index == 2
-                              ? CupertinoIcons.bell
-                              : CupertinoIcons.person,
-                  index,
-                ),
-              ),
-            ),
-            Positioned(
-                top: 2,
-                right: MediaQuery.of(context).size.width * 0.33,
-                child: InkWell(
-                  onTap: () {
-                    _controller.animateToPage(
-                      page,
-                      duration: Duration(milliseconds: 1),
-                      curve: Curves.ease,
-                    );
-                    page = 2;
-                    setState(() {});
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(4),
-                    decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(7)),
-                    child: Center(
-                      child: Text(
-                        "1",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ))
-          ],
-        ),
-      ),
     );
   }
 
@@ -112,9 +85,9 @@ class _ScreenBenhNhanState extends State<ScreenBenhNhan> {
           padding: EdgeInsets.symmetric(vertical: 10),
           decoration: BoxDecoration(
               border: Border(
-            top: BorderSide(color: Colors.black, width: 0.5),
-            left: BorderSide(color: Colors.black, width: 0.5),
-          )),
+                top: BorderSide(color: Colors.black, width: 0.5),
+                left: BorderSide(color: Colors.black, width: 0.5),
+              )),
           child: Icon(
             iconData,
             size: 30,

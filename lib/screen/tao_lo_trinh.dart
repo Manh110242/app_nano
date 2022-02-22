@@ -19,6 +19,7 @@ class _TaoLoTrinhState extends State<TaoLoTrinh> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(icon: Icon(Icons.arrow_back,color: Colors.black,),onPressed: () => Navigator.pop(context),),
         centerTitle: true,
         backgroundColor: colorMain,
         title: Text('Tạo lộ trình điều trị'),

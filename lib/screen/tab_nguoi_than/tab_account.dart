@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 import '../../color_main.dart';
 import '../chat.dart';
 
-class TabAccount extends StatefulWidget {
-  bool check ;
-  TabAccount({required this.check});
+class TabAccountNT extends StatefulWidget {
   @override
-  _TabAccountState createState() => _TabAccountState();
+  _TabAccountNTState createState() => _TabAccountNTState();
 }
 
-class _TabAccountState extends State<TabAccount> {
+class _TabAccountNTState extends State<TabAccountNT> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +47,7 @@ class _TabAccountState extends State<TabAccount> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "BS. VŨ NAM Khánh".toUpperCase(),
+                        "TN. BN. VŨ Khánh linh".toUpperCase(),
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 25,
@@ -59,7 +58,7 @@ class _TabAccountState extends State<TabAccount> {
                         height: 5,
                       ),
                       Text(
-                        "ID: BS12345".toUpperCase(),
+                        "ID: TN12345".toUpperCase(),
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 25,
@@ -73,7 +72,7 @@ class _TabAccountState extends State<TabAccount> {
                   height: 25,
                 ),
                 Text(
-                  "Ngày sinh: 03/07/1970",
+                  "Ngày sinh: 03/08/1989",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 17,
@@ -82,7 +81,7 @@ class _TabAccountState extends State<TabAccount> {
                 ),
                 SizedBox(height: 10,),
                 Text(
-                  "Chuyên khoa: Tai - Mũi - Họng",
+                  "Nghề nghiệp: Kế toán",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 17,
@@ -91,7 +90,7 @@ class _TabAccountState extends State<TabAccount> {
                 ),
                 SizedBox(height: 10,),
                 Text(
-                  "Bệnh viện Đa khoa tỉnh Vĩnh Phúc",
+                  "Địa chỉ: Vĩnh Yên, Vĩnh Phúc",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 17,
@@ -100,7 +99,7 @@ class _TabAccountState extends State<TabAccount> {
                 ),
                 SizedBox(height: 10,),
                 Text(
-                  "Số bệnh nhân kết nối: 85",
+                  "Người thân kết nối: BN123774",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 17,
@@ -109,7 +108,16 @@ class _TabAccountState extends State<TabAccount> {
                 ),
                 SizedBox(height: 10,),
                 Text(
-                  "Số ca khám hôm nay: 3",
+                  "Bác sĩ kết nối: BS123654",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400
+                  ),
+                ),
+                SizedBox(height: 10,),
+                Text(
+                  "Lịch khám sắp tới: Không",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 17,
@@ -118,29 +126,6 @@ class _TabAccountState extends State<TabAccount> {
                 ),
                 SizedBox(height: 20,),
 
-                widget.check ? InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenChat()));
-
-                  },
-                  child: Container(
-                    height: 90,
-                    margin: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                    decoration: BoxDecoration(
-                      color: colorMain,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(
-                        child: Text(
-                          "Kết nối với bệnh nhân",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        )),
-                  ),
-                ) : Container(),
               ],
             ),
           ),

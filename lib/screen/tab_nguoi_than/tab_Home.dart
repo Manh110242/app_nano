@@ -1,5 +1,7 @@
+import 'package:app_nano/screen/chat.dart';
 import 'package:app_nano/screen/ket_noi_bs.dart';
 import 'package:app_nano/screen/lich_kham_cua_toi.dart';
+import 'package:app_nano/screen/theo_gioi_lo_tring.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -9,14 +11,15 @@ import '../lich_su.dart';
 import '../screen_sang_loc_benh.dart';
 import '../tao_lo_trinh.dart';
 
-class TabHomeBN extends StatefulWidget {
+class TabHomeNT extends StatefulWidget {
   @override
-  _TabHomeBNState createState() => _TabHomeBNState();
+  _TabHomeNTState createState() => _TabHomeNTState();
 }
 
-class _TabHomeBNState extends State<TabHomeBN> {
+class _TabHomeNTState extends State<TabHomeNT> {
   TextEditingController search = TextEditingController();
   final ImagePicker _picker = ImagePicker();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +61,7 @@ class _TabHomeBNState extends State<TabHomeBN> {
             InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LichKhamCuaToi()));
+                    MaterialPageRoute(builder: (context) => ScreenChat()));
               },
               child: Container(
                 height: 90,
@@ -69,19 +72,19 @@ class _TabHomeBNState extends State<TabHomeBN> {
                 ),
                 child: Center(
                     child: Text(
-                  "Lịch khám của tôi",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
-                  ),
-                )),
+                      "Liên lạc bệnh nhân",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    )),
               ),
             ),
             InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LichSuUongThuoc()));
+                    MaterialPageRoute(builder: (context) => ScreenChat()));
               },
               child: Container(
                 height: 90,
@@ -92,19 +95,19 @@ class _TabHomeBNState extends State<TabHomeBN> {
                 ),
                 child: Center(
                     child: Text(
-                  "Lịch sử dùng thuốc",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
-                  ),
-                )),
+                      "Liên lạc bác sĩ",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    )),
               ),
             ),
             InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => KetNoiBacSi(title: "Kết nối bác sĩ",sub: "Nhập ID bác sĩ",)));
+                    MaterialPageRoute(builder: (context) => TheoGioiLoTrinh()));
               },
               child: Container(
                 height: 90,
@@ -115,52 +118,7 @@ class _TabHomeBNState extends State<TabHomeBN> {
                 ),
                 child: Center(
                     child: Text(
-                  "Kết nối bác sĩ",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
-                  ),
-                )),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => KetNoiBacSi(title: "kết nối người thân", sub: "Nhập ID người thân")));
-              },
-              child: Container(
-                height: 90,
-                margin: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-                decoration: BoxDecoration(
-                  color: colorMain,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                    child: Text(
-                  "Kết nối người thân",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
-                  ),
-                )),
-              ),
-            ),
-            InkWell(
-              onTap: () async {
-                await _picker.pickImage(source: ImageSource.camera);
-              },
-              child: Container(
-                height: 90,
-                margin: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-                decoration: BoxDecoration(
-                  color: colorMain,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                    child: Text(
-                      "Tìm kiếm thuốc",
+                      "Kiểm tra liệu trình bệnh nhân",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 22,

@@ -1,18 +1,18 @@
-import 'package:app_nano/screen/tab/tab_Home.dart';
-import 'package:app_nano/screen/tab/tab_account.dart';
-import 'package:app_nano/screen/tab/tab_lich.dart';
-import 'package:app_nano/screen/tab/tab_notifi.dart';
+import 'package:app_nano/screen/tab_nguoi_than/tab_Home.dart';
+import 'package:app_nano/screen/tab_nguoi_than/tab_account.dart';
+import 'package:app_nano/screen/tab_nguoi_than/tab_notifi.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../color_main.dart';
 
-class ScreenHomePage extends StatefulWidget {
+class NguoiThan extends StatefulWidget {
+
   @override
-  _ScreenHomePageState createState() => _ScreenHomePageState();
+  _NguoiThanState createState() => _NguoiThanState();
 }
 
-class _ScreenHomePageState extends State<ScreenHomePage> {
+class _NguoiThanState extends State<NguoiThan> {
   int page = 0;
   late PageController _controller;
 
@@ -32,9 +32,9 @@ class _ScreenHomePageState extends State<ScreenHomePage> {
           physics: NeverScrollableScrollPhysics(),
           controller: _controller,
           children: [
-            TabHome(),
-            TabNotifi(),
-            TabAccount(check: true,),
+            TabHomeNT(),
+            TabNotifiNT(),
+            TabAccountNT(),
           ],
         ),
       ),
@@ -61,34 +61,6 @@ class _ScreenHomePageState extends State<ScreenHomePage> {
     );
   }
 
-  Widget ItemBottom(IconData iconData, index) {
-    return Expanded(
-      child: InkWell(
-        onTap: () {
-          page = index;
-          _controller.animateToPage(
-            page,
-            duration: Duration(milliseconds: 1),
-            curve: Curves.ease,
-          );
-          setState(() {});
-        },
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          decoration: BoxDecoration(
-              border: Border(
-            top: BorderSide(color: Colors.black, width: 0.5),
-            left: BorderSide(color: Colors.black, width: 0.5),
-          )),
-          child: Icon(
-            iconData,
-            size: 30,
-            color: index == page ? colorMain : Colors.black,
-          ),
-        ),
-      ),
-    );
-  }
 
 
 }

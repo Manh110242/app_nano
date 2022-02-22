@@ -4,6 +4,8 @@ import 'package:app_nano/screen/tab/tab_lich.dart';
 import 'package:flutter/material.dart';
 
 import '../../color_main.dart';
+import '../chat.dart';
+import '../ho_so_benh_nhan.dart';
 
 class TabHome extends StatefulWidget {
   @override
@@ -17,10 +19,9 @@ class _TabHomeState extends State<TabHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         backgroundColor: Colors.white,
-        elevation: 0,
-        leading: Container(),
-        leadingWidth: 0,
+        leading: Image.asset("assets/images/logo.png",fit: BoxFit.contain, width: 60, height: 60,),
         title: Container(
           height: 40,
           child: TextField(
@@ -32,9 +33,11 @@ class _TabHomeState extends State<TabHome> {
               contentPadding: EdgeInsets.symmetric(horizontal: 15),
               border: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.grey, width: 0.5),
+                borderRadius: BorderRadius.circular(10)
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: colorMain, width: 0.5),
+                  borderRadius: BorderRadius.circular(10)
               ),
             ),
           ),
@@ -50,36 +53,15 @@ class _TabHomeState extends State<TabHome> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>MauPhieuKham()));
-              },
-              child: Container(
-                height: 50,
-                margin: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-                decoration: BoxDecoration(
-                  color: colorMain,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                    child: Text(
-                  "Mẫu phiêu khám",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
-                  ),
-                )),
-              ),
-            ),
-            InkWell(
-              onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>TabLich()));
+                //Navigator.push(context, MaterialPageRoute(builder: (context)=>MauPhieuKham()));
               },
               child: Container(
-                height: 50,
-                margin: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+                height: 90,
+                margin: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                 decoration: BoxDecoration(
                   color: colorMain,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Center(
                     child: Text(
@@ -94,18 +76,40 @@ class _TabHomeState extends State<TabHome> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>TabAccount()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>HoSoBenhNhan()));
               },
               child: Container(
-                height: 50,
-                margin: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+                height: 90,
+                margin: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                 decoration: BoxDecoration(
                   color: colorMain,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Center(
                     child: Text(
-                  "Hồ sơ cá nhân",
+                  "Hồ sơ bệnh nhân",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w700,
+                  ),
+                )),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenChat()));
+              },
+              child: Container(
+                height: 90,
+                margin: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                decoration: BoxDecoration(
+                  color: colorMain,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                    child: Text(
+                    "Kết nối bệnh nhân",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 22,
